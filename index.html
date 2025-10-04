@@ -626,9 +626,15 @@
             height: 24px;
             fill: var(--white);
         }
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
         .social-icon.whatsapp { background-color: #25D366; }
         .social-icon.instagram { background-color: #C13584; }
-        .social-icon.tiktok { background-color: #010101; }
+        .social-icon.tiktok { background-color: #ffffff; } /* Cambiado a blanco para la imagen */
         .map-container {
             width: 100%;
             height: 400px;
@@ -704,10 +710,9 @@
             background-color: #075E54;
         }
 
-        /* CHATBOT WINDOW */
         .chatbot-window {
             position: fixed;
-            bottom: 10rem;
+            bottom: 9rem;
             right: 2rem;
             width: 350px;
             max-width: 90vw;
@@ -881,19 +886,31 @@
             h2 { font-size: 2rem; }
             
             .nav-links { display: none; }
+
             .hamburger {
-                display: block;
-                cursor: pointer;
-                background: none;
-                border: none;
-                z-index: 1002;
-            }
-            .hamburger-icon {
-                width: 30px;
-                height: 20px;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: space-around;
+                width: 30px;
+                height: 25px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                z-index: 1002;
+            }
+
+            .hamburger:focus {
+                outline: none;
+            }
+
+            .hamburger-icon {
+                width: 30px;
+                height: 25px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
             }
             .hamburger-icon span {
                 display: block;
@@ -1030,6 +1047,7 @@
                     <div class="hero-ctas">
                         <a href="https://wa.me/541149158861?text=Hola%20Vane,%20quiero%20agendar%20una%20consulta" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agendá tu consulta</a>
                         <a href="#servicios" class="btn btn-secondary">Conocé mis servicios</a>
+                        <a href="https://www.tiktok.com/@vane.psicologia46" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">mi tiktok</a>
                     </div>
                     <div class="contact-card">
                         <a href="https://wa.me/541149158861?text=Hola%20Vane" target="_blank" rel="noopener noreferrer">
@@ -1236,7 +1254,7 @@
                             </div>
                             <div class="social-link-item">
                                 <a href="https://www.tiktok.com/@vane.psicologia46" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" aria-label="TikTok">
-                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 0 .15.04.19.12c.02.05.03.1.04.16c.16 2.99 2.31 5.62 5.23 6.52c.24.07.34.25.34.49c.01.48-.01.96-.02 1.44c-.01.31-.19.49-.49.49c-1.33-.01-2.65-.01-3.98-.02c-.15 0-.29-.06-.39-.18c-.01-.01-.02-.03-.03-.05c-.32-1.23-1.03-2.33-2.02-3.17c-.12-.1-.28-.11-.44-.09c-.43.04-.86.07-1.29.11c-.24.02-.46.12-.63.29c-.3.29-.4.71-.33 1.12c.09.42.34.78.71.99c.35.2.73.29 1.13.3c.09 0 .19.01.28.01c.21 0 .42 0 .63 0c.26 0 .49.11.64.31c.17.21.22.47.21.74c-.01 1.01-.01 2.02-.01 3.03c0 .3-.15.48-.42.56c-1.66.5-3.37.73-5.1.53c-2.88-.31-5.1-2.06-6.41-4.7c-.37-.77-.61-1.61-.75-2.49c-.04-.24.06-.48.29-.6c.26-.14.54-.11.78.07c.2.15.35.35.5.54c1.24 1.55 2.93 2.51 4.88 2.7c.22.02.43-.03.58-.17c.01-.01.02-.02.03-.03c.36-.34.54-.79.5-1.27c-.02-.22-.09-.43-.23-.6c-.22-.27-.52-.41-.85-.43c-1.11-.08-2.22-.16-3.33-.25c-.23-.02-.44-.12-.62-.28c-1.42-1.24-2.14-3.04-2.1-5.02c.02-1.74 1.1-3.32 2.6-4.04c.1-.05.2-.08.31-.09c.26-.01.52.01.78.02c1.38.05 2.76.08 4.14.12c.11 0 .22.02.33.04c.2.02.39.1.53.24c.06.06.1.13.15.21c.01.02.01.03.02.05z"/></svg>
+                                   <img src="https://res.cloudinary.com/dm2g8wqvx/image/upload/v1759535466/logotipo-tik-tok_zu0ifb.avif" alt="Logo de TikTok">
                                 </a>
                                 <p class="social-label">TikTok</p>
                             </div>
@@ -1264,9 +1282,6 @@
         </button>
         <a href="https://instagram.com/vane.psicologa" target="_blank" rel="noopener noreferrer" class="floating-btn instagram" aria-label="Ir al perfil de Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@vane.psicologia46" target="_blank" rel="noopener noreferrer" class="floating-btn tiktok" aria-label="Ir al perfil de TikTok">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02c.08 0 .15.04.19.12c.02.05.03.1.04.16c.16 2.99 2.31 5.62 5.23 6.52c.24.07.34.25.34.49c.01.48-.01.96-.02 1.44c-.01.31-.19.49-.49.49c-1.33-.01-2.65-.01-3.98-.02c-.15 0-.29-.06-.39-.18c-.01-.01-.02-.03-.03-.05c-.32-1.23-1.03-2.33-2.02-3.17c-.12-.1-.28-.11-.44-.09c-.43.04-.86.07-1.29.11c-.24.02-.46.12-.63.29c-.3.29-.4.71-.33 1.12c.09.42.34.78.71.99c.35.2.73.29 1.13.3c.09 0 .19.01.28.01c.21 0 .42 0 .63 0c.26 0 .49.11.64.31c.17.21.22.47.21.74c-.01 1.01-.01 2.02-.01 3.03c0 .3-.15.48-.42.56c-1.66.5-3.37.73-5.1.53c-2.88-.31-5.1-2.06-6.41-4.7c-.37-.77-.61-1.61-.75-2.49c-.04-.24.06-.48.29-.6c.26-.14.54-.11.78.07c.2.15.35.35.5.54c1.24 1.55 2.93 2.51 4.88 2.7c.22.02.43-.03.58-.17c.01-.01.02-.02.03-.03c.36-.34.54-.79.5-1.27c-.02-.22-.09-.43-.23-.6c-.22-.27-.52-.41-.85-.43c-1.11-.08-2.22-.16-3.33-.25c-.23-.02-.44-.12-.62-.28c-1.42-1.24-2.14-3.04-2.1-5.02c.02-1.74 1.1-3.32 2.6-4.04c.1-.05.2-.08.31-.09c.26-.01.52.01.78.02c1.38.05 2.76.08 4.14.12c.11 0 .22.02.33.04c.2.02.39.1.53.24c.06.06.1.13.15.21c.01.02.01.03.02.05z"/></svg>
         </a>
         <a href="https://wa.me/541149158861?text=Hola%20Vane,%20quiero%20agendar%20una%20consulta" target="_blank" rel="noopener noreferrer" class="floating-btn" aria-label="Contactar por WhatsApp">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.005 4.91A9.816 9.816 0 0 0 12.003 2C6.477 2 2 6.477 2 12.002c0 1.742.453 3.376 1.258 4.803L2 22l5.255-1.372a9.96 9.96 0 0 0 4.748 1.22h.002c5.524 0 10.002-4.478 10.002-10.003c0-2.69-.99-5.18-2.65-7.014zm-7.002 15.246c-1.543 0-3.03-.43-4.32-1.21L6.96 19.58l.64-1.63a8.103 8.103 0 0 1-1.6-4.945c0-4.545 3.69-8.235 8.236-8.235a8.235 8.235 0 0 1 8.235 8.235c0 4.545-3.692 8.235-8.236 8.235zm4.814-6.39c-.27-.135-1.595-.785-1.845-.875c-.245-.09-.425-.135-.6.135c-.18.27-.695.875-.855 1.055c-.155.18-.315.205-.58.065c-.27-.135-1.135-.42-2.16-1.335c-.8-.705-1.34-1.575-1.495-1.845c-.15-.27-.015-.415.12-.545c.12-.12.27-.315.405-.475c.135-.165.18-.27.27-.455c.09-.18.045-.345-.02-.48c-.07-.135-.6-1.45-1.025-2.015c-.21-.285-.425-.45-.6-.45h-.52c-.18 0-.45.06-.69.375c-.24.315-.92.9-1.11 2.175c.045 1.275.92 2.52 1.045 2.7c.125.18 1.84 2.81 4.465 3.92c.63.27 1.13.42 1.52.54 1.18.36 1.54.34 1.81.21c.29-.15.93-.83 1.05-1.625c.13-.79.13-1.47.08-1.62z"/></svg>
@@ -1489,6 +1504,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
